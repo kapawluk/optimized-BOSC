@@ -27,7 +27,7 @@ bgsignal=simulate(F);
 
 bgshoulder=ceil(width*Fsample/min(F)); % round up with ceil.m to be safe
 
-bgfitMethod="optimized"; % choose fit method, options are: "standard", "robustfit", "median", "highpower", "freqsubset", "optimized"
+bgfitMethod='optimized'; % choose fit method, options are: 'standard', 'robustfit', 'median', 'highpower', 'freqsubset', 'optimized'
 [pv,meanpower]=BOSC_bgfit(F,B(:,(bgshoulder+1):(end-bgshoulder)),bgfitMethod);
 
 % NB: meanpower is the estimated background power spectrum (geometric mean power as a function of frequency)
@@ -39,7 +39,7 @@ bgfitMethod="optimized"; % choose fit method, options are: "standard", "robustfi
 
 % *** Hint: At this stage, it is a good idea to cross-check the background power spectrum fit (see PLOT #1: Power spectrum and background spectrum fit)
 
-ks_d=BOSC_compare_chi2(F,B(:,(bgshoulder+1):(end-bgshoulder)),meanpower); % (optional) ks test to check background fit quality
+ks_d=BOSC_compare_chi2(F,B(:,(bgshoulder+1):(end-bgshoulder)),meanpower); % (optional) ks test to check background fit quality, lower KS d values indicate a better fit
 
 % STEP FOUR: Set the target signal in which oscillations will be detected.
 % The variable called "eegsignal" should contain more EEG signal than you want to analyze. starttime and endtime should be set to mark the bounds of a single trial of interest within eegsignal. Make sure there is enough additional signal before and after starttime and endtime (within eegsignal) to be able to include the shoulder to avoid edge artifacts (see README)

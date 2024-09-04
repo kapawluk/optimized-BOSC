@@ -34,19 +34,19 @@ function [pv,meanpower]=BOSC_bgfit(F,B,bgfitMethod)
 % meanpower - geometric mean background power values by frequency aka
 %             10^mean(log10(power)), estimated from regression
 %
-if bgfitMethod=='standard'
+if isequal(bgfitMethod,'standard')
 %%% normal BOSC %%%
 pv=polyfit(log10(F),mean(log10(B),2),1); % linear regression
 meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units (power; usually uV^2/Hz)
-elseif bgfitMethod=='robustfit'
+elseif isequal(bgfitMethod,'robustfit')
 %%% robustfit %%%
 pv=flip(robustfit(log10(F),mean(log10(B),2)')); % robust regression
 meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units
-elseif bgfitMethod=='median'
+elseif isequal(bgfitMethod,'median')
 %%% median-based regression, log-means calculated from log-medians %%%
 pv=polyfit(log10(F),(psi(1)+log(2)+median(log(B),2)-log(chi2inv(0.5,2)))/log(10),1); % linear regression
 meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units % transform back to natural units
-elseif bgfitMethod=='highpower'
+elseif isequal(bgfitMethod,'highpower')
 %%% remove high power %%%
     pv=polyfit(log10(F),mean(log10(B),2),1); % linear regression
     meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units
@@ -54,7 +54,7 @@ elseif bgfitMethod=='highpower'
     B(B>=(chi2inv(0.999,2)*meanpower(:)/exp(psi(1)+log(2))))=NaN; % power exceeding frequency-specific thresholds -> NaN
     pv=polyfit(log10(F),mean(log10(B),2,'omitnan'),1); % linear regression, NaNs excluded
     meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units
-elseif bgfitMethod=='freqsubset'
+elseif isequal(bgfitMethod,'freqsubset')
     %%% frequency subset with ks d %%%
     pv=polyfit(log10(F),mean(log10(B),2),1); % linear regression
     meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units
@@ -62,7 +62,7 @@ elseif bgfitMethod=='freqsubset'
     [~,idx]=mink(ks_d,10); % use frequencies with lowest KS d (best 10, can be changed)
     pv=polyfit(log10(F(idx)),mean(log10(B(idx,:)),2),1); % linear regression using frequency subset
     meanpower=10.^(polyval(pv,log10(F))); % transform back to natural units
-elseif bgfitMethod=='optimized'
+elseif isequal(bgfitMethod,'optimized')
     %%% optimized BOSC %%%
     % combination of median-based regression, high-power removal and robustfit
     pv=polyfit(log10(F),(psi(1)+log(2)+median(log(B),2)-log(chi2inv(0.5,2)))/log(10),1); % linear regression, log-medians -> log-means

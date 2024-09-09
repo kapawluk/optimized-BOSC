@@ -17,7 +17,7 @@ addpath(genpath('simulate'));
 bgsignal=simulate(F); 
 
 % STEP ONE: Perform wavelet transform on the signal being used for background power estimates
-% NB: Background signal (bgsignal) is the time series (either row or column vector) used to estimate the background spectrum.
+% NB: Background signal (bgsignal) is the time series (row vector by default) used to estimate the background spectrum.
 
 [B,T]=BOSC_tf(bgsignal,F,Fsample,width); % Compute the time-frequency (wavelet) spectrogram
 

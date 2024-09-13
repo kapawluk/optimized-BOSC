@@ -1,23 +1,24 @@
-%    This file is part of the Better OSCillation detection (BOSC) library.
-%
-%    The BOSC library is free software: you can redistribute it and/or modify
-%    it under the terms of the GNU General Public License as published by
-%    the Free Software Foundation, either version 3 of the License, or
-%    (at your option) any later version.
-%
-%    The BOSC library is distributed in the hope that it will be useful,
-%    but WITHOUT ANY WARRANTY; without even the implied warranty of
-%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%    GNU General Public License for more details.
-%
-%    You should have received a copy of the GNU General Public License
-%    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
-%
-%    Copyright 2010 Jeremy B. Caplan, Adam M. Hughes, Tara A. Whitten
-%    and Clayton T. Dickson.
-%
 function [pv,meanpower]=BOSC_bgfit(F,B,bgfitMethod)
 % version 2.0
+%
+% This file is part of the Better OSCillation detection (BOSC) library.
+%
+% The BOSC library is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+%
+% The BOSC library is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+%
+% Copyright 2010 Jeremy B. Caplan, Adam M. Hughes, Tara A. Whitten
+% and Clayton T. Dickson.
+%
 % This function estimates the background power spectrum via a regression 
 % fit to the power spectrum in log-log coordinates using a selection of:
 % normal BOSC, individual modifications or optimized BOSC

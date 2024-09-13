@@ -1,5 +1,6 @@
 function ksstat=BOSC_compare_chi2(F,B,meanpower) 
 % new function included with version 2.0
+%
 % This function compares the power distribution at each frequency to the
 % chi-square(2) distribution using KS tests
 %

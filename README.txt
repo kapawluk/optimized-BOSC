@@ -15,6 +15,7 @@
 
     Copyright 2010 Jeremy B. Caplan, Adam M. Hughes, Tara A. Whitten
     and Clayton T. Dickson.
+    Updated 2024 Kieran A. Pawluk, Tamari Shalamberidze and Jeremy B. Caplan.
 
 
 The optimized BOSC Method (BOSC version 2.0): Brief Tutorial

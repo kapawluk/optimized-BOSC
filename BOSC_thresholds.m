@@ -18,6 +18,7 @@ function [powthresh,durthresh]=BOSC_thresholds(Fsample,percentilethresh,numcycle
 %
 % Copyright 2010 Jeremy B. Caplan, Adam M. Hughes, Tara A. Whitten
 % and Clayton T. Dickson.
+% Updated 2024 Kieran A. Pawluk, Tamari Shalamberidze and Jeremy B. Caplan.
 %
 % This function calculates all the power thresholds and duration
 % thresholds for use with BOSC_detect.m to detect oscillatory episodes

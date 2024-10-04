@@ -18,6 +18,7 @@ function [pv,meanpower]=BOSC_bgfit(F,B,bgfitMethod)
 %
 % Copyright 2010 Jeremy B. Caplan, Adam M. Hughes, Tara A. Whitten
 % and Clayton T. Dickson.
+% Updated 2024 Kieran A. Pawluk, Tamari Shalamberidze and Jeremy B. Caplan.
 %
 % This function estimates the background power spectrum via a regression 
 % fit to the power spectrum in log-log coordinates using a selection of:

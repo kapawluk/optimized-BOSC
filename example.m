@@ -1,4 +1,4 @@
-width=6; %  - the wavenumber of the Morlet wavelet (Grossman & Morlet, 1985)
+width=6; %  - width in terms of number of cycles of the Morlet wavelet (Grossman & Morlet, 1985)
 
 Fsample=500; % Sampling rate of signal, in Hz.
 

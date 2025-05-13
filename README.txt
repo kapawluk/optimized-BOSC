@@ -20,6 +20,8 @@
 
 The optimized BOSC Method (BOSC version 2.0): Brief Tutorial
 ============================================================
+* To use the recommended method of optimized BOSC, see the instructions below for the input variable "bgfitMethod" in the 	 
+  BOSC_bgfit.m function.
 
 Core functions and changes from version 1.0
 -------------------------------------------
